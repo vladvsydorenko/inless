@@ -6,7 +6,7 @@
   "author": "Vlad Sydorenko",
   "license": "MIT",
   "scripts": {
-    "electron": "electron .",
+    "app": "electron .",
     "frontend:build": "rollup -c --environment service:frontend",
     "frontend:dev": "nodemon --config .nodemon/nodemon.frontend.json --exec yarn run frontend:build",
     "backend:build": "rollup -c --environment service:backend",
