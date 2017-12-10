@@ -6,6 +6,7 @@ export interface IMakeWindowOptions {
     isRemote?: boolean;
     isHidden?: boolean;
     isMenuHidden?: boolean;
+    isFrameless?: boolean;
     showDevTools?: boolean;
     width?: number;
     height?: number;
@@ -19,12 +20,23 @@ const makePath = (path: string, isRemote: boolean) => {
     });
 };
 
-export const makeWindow = ({ path, isRemote, isHidden, isMenuHidden, showDevTools, width, height }: IMakeWindowOptions): BrowserWindow => {
+export const makeWindow = (config: IMakeWindowOptions): BrowserWindow => {
+    const {
+        path,
+        isRemote,
+        isHidden,
+        isMenuHidden,
+        isFrameless,
+        showDevTools,
+        width,
+        height
+    } = config;
     const pagePath = makePath(path, isRemote);
     const options: any = {
         show: !isHidden,
         width: width || 800,
         height: height || 600,
+        frame: !isFrameless,
     };
 
     const window = new BrowserWindow(options);

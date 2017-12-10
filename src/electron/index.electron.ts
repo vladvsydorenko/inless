@@ -13,6 +13,7 @@ app.on('ready', () => {
     frontendWindow = makeWindow({
         path: FRONTEND_PAGE_URL,
         showDevTools: true,
+        isMenuHidden: true,
     });
 
     backendWindow = makeWindow({
