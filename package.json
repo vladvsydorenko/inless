@@ -1,14 +1,14 @@
 {
-  "name": "?",
+  "name": "inless",
   "version": "0.0.1",
-  "description": "?",
-  "main": "index.js",
+  "description": "Make app inless code",
+  "main": "index.electron.js",
   "author": "Vlad Sydorenko",
   "license": "MIT",
   "scripts": {
     "app": "electron .",
     "build": "rollup -c",
-    "dev": "nodemon --exec npm run build"
+    "dev": "nodemon --exec yarn run build"
   },
   "dependencies": {
     "electron": "^1.7.9",
