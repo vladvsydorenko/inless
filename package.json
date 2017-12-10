@@ -8,11 +8,11 @@
   "scripts": {
     "electron": "electron .",
     "frontend:build": "rollup -c --environment service:frontend",
-    "frontend:dev": "nodemon --config dev-configs/nodemon.frontend.json --exec yarn run frontend:build",
+    "frontend:dev": "nodemon --config .nodemon/nodemon.frontend.json --exec yarn run frontend:build",
     "backend:build": "rollup -c --environment service:backend",
-    "backend:dev": "nodemon --config dev-configs/nodemon.backend.json --exec yarn run backend:build",
+    "backend:dev": "nodemon --config .nodemon/nodemon.backend.json --exec yarn run backend:build",
     "electron:build": "rollup -c --environment service:electron",
-    "electron:dev": "nodemon  --config dev-configs/nodemon.electron.json --exec yarn run electron:build"
+    "electron:dev": "nodemon  --config .nodemon/nodemon.electron.json --exec yarn run electron:build"
   },
   "dependencies": {
     "electron": "^1.7.9",
