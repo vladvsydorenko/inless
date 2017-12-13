@@ -1,7 +1,7 @@
 {
     "verbose": true,
     "ignore": ["node_modules/*", "dist/*"],
-    "watch": ["src/backend/"],
+    "watch": ["src/backend/", "src/shared/"],
     "runOnChangeOnly": false,
     "ext": "ts tsx"
 }

@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'path';
 import glob from 'glob';
 import typescript from 'typescript';
 import cssnext from 'postcss-cssnext';

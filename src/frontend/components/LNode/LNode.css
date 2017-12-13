@@ -1,0 +1,40 @@
+:root {
+    --marginBetweenSockets: 20px;
+    --titleFontSize: 18px;
+    --nodeBottomPadding: 10px;
+}
+
+.node {
+    position: absolute;
+    overflow: visible;
+    left: 200px;
+    top: 200px;
+    padding-bottom: var(--nodeBottomPadding);
+
+    background: #eee;
+}
+
+.title {
+    margin: 0;
+    padding: 8px 0;
+    text-align: center;
+    font-size: var(--titleFontSize);
+
+    background: #666;
+}
+
+.inputBox {
+    display: inline-block;
+    margin-right: var(--marginBetweenSockets);
+}
+
+.outputBox {
+    display: inline-block;
+}
+
+.metaBox {
+    /* overflow: visible; */
+    /* transform: translateY(-50%); */
+    margin-bottom: 10px;
+    text-align: center;
+}

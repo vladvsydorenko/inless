@@ -22,6 +22,8 @@
   },
   "devDependencies": {
     "@types/node": "^8.0.57",
+    "@types/react": "^16.0.29",
+    "@types/react-dom": "^16.0.3",
     "another-rollup-watch": "^3.10.0",
     "nodemon": "^1.12.1",
     "postcss-cssnext": "^3.0.2",

@@ -1,3 +1,3 @@
-import style from './test.css';
+import { render } from './render';
 
-console.log('loaded styles', style);
+render('app');

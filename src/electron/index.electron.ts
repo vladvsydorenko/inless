@@ -18,8 +18,8 @@ app.on('ready', () => {
 
     backendWindow = makeWindow({
         path: BACKEND_PAGE_URL,
-        isHidden: false,
         showDevTools: true,
+        isHidden: false,
     });
 
     frontendWindow.on('closed', () => { frontendWindow = null; });
