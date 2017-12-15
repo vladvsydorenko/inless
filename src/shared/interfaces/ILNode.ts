@@ -2,7 +2,7 @@ export enum ELNodeSocketRole {
     INPUT,
     OUTPUT,
     META,
- }
+}
 
 export interface ILNodeSocket {
     role: ELNodeSocketRole;
@@ -12,6 +12,7 @@ export interface ILNodeSocket {
 
 export interface ILNode {
     id: string;
+    type: string;
     name: string;
     description: string;
     meta: ILNodeSocket[];

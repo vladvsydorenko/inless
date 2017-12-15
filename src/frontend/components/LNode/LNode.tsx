@@ -16,10 +16,10 @@ const renderSockets = (sockets: ILNodeSocket[]) => {
 export const LNode = ({ node }: ILNodeProps) => {
     return (
         <div className={style.node}>
-            <div className={style.metaBox}>{ renderSockets(node.meta) }</div>
-            <h2 className={style.title}>{node.name}</h2>
+            <h2 className={style.title}>({node.type}) {node.name}</h2>
             <div className={style.inputBox}>{ renderSockets(node.input) }</div>
             <div className={style.outputBox}>{ renderSockets(node.output) }</div>
+            <div className={style.metaBox}>{ renderSockets(node.meta) }</div>
         </div>
     );
 };

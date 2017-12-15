@@ -2,8 +2,8 @@
     --circleSize: 14px;
     --circleInputMargin: calc(-var(--circleSize) / 2);
     --circleOutputMargin: calc(var(--circleSize) / 2);
-    --metaSocketPadding: 0 6px;
     --socketVerticallPadding: 2px;
+    --metaSocketPadding: 0 6px;
 }
 
 .socket {}
@@ -47,7 +47,7 @@
 
 .socketCircleMeta {
     position: absolute;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, 100%);
     left: 50%;
     top: 0;
 }

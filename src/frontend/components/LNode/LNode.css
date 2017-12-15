@@ -2,6 +2,7 @@
     --marginBetweenSockets: 20px;
     --titleFontSize: 18px;
     --nodeBottomPadding: 10px;
+    --metaTopMargin: 10px;
 }
 
 .node {
@@ -9,7 +10,7 @@
     overflow: visible;
     left: 200px;
     top: 200px;
-    padding-bottom: var(--nodeBottomPadding);
+    /* padding-bottom: var(--nodeBottomPadding); */
 
     background: #eee;
 }
@@ -29,12 +30,11 @@
 }
 
 .outputBox {
-    display: inline-block;
+    float: right;
 }
 
 .metaBox {
-    /* overflow: visible; */
-    /* transform: translateY(-50%); */
-    margin-bottom: 10px;
+    clear: both;
+    padding-top: var(--metaTopMargin);
     text-align: center;
 }
