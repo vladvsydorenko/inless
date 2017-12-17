@@ -1,6 +1,19 @@
 # Inless
 Make application `in less` code.
 
+# Use-cases
+
+## From Node
+ - Notify about selected socket
+ - Listen to socket selection events. If there is a socket from this node so select it as visual
+
+## Connection process
+Connection tool listen for socket selection.
+For drag-n-drop it is requried for node to notify about socket selection on mousedown, not on click. Or event better on mouseenter.
+Move tool listen for node selection. The same as with connection tool.
+
+from node:selectSocket -> if lineTool active -> from lineTool:socketSelected -> from node:update socket ui
+
 # Get started
 To install dependencies
 `yarn`

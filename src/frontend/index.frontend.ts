@@ -1,3 +1,1 @@
-import { render } from './render';
-
-render('app');
+import './test';
