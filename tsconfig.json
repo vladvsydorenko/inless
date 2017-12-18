@@ -5,8 +5,8 @@
       "target": "es6",
       "jsx": "react",
       "declaration": false,
-      "sourceMap": false,
-      "allowJs": false,
+      "sourceMap": true,
+      "allowJs": true,
       "noImplicitAny": true
     }
 }

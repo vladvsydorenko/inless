@@ -2,8 +2,8 @@ import * as path from 'path';
 import { app, BrowserWindow } from 'electron';
 import { makeWindow } from './makeWindow';
 
-const FRONTEND_PAGE_URL = path.join(process.cwd(), 'src/frontend/index.frontend.html');
-const BACKEND_PAGE_URL = path.join(process.cwd(), 'src/backend/index.backend.html');
+const FRONTEND_PAGE_URL = path.join(process.cwd(), 'src/frontend/index.html');
+const BACKEND_PAGE_URL = path.join(process.cwd(), 'src/backend/index.html');
 
 let frontendWindow: BrowserWindow;
 let backendWindow: BrowserWindow;

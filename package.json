@@ -2,34 +2,28 @@
   "name": "inless",
   "version": "0.0.1",
   "description": "Make app inless code",
-  "main": "dist/inless.electron.js",
   "author": "Vlad Sydorenko",
   "license": "MIT",
+  "main": "dist/electron.js",
   "scripts": {
     "app": "electron .",
-    "frontend:build": "rollup -c --environment service:frontend",
-    "frontend:dev": "nodemon --config .nodemon/nodemon.frontend.json --exec yarn run frontend:build",
-    "backend:build": "rollup -c --environment service:backend",
-    "backend:dev": "nodemon --config .nodemon/nodemon.backend.json --exec yarn run backend:build",
-    "electron:build": "rollup -c --environment service:electron",
-    "electron:dev": "nodemon  --config .nodemon/nodemon.electron.json --exec yarn run electron:build"
+    "frontend:build": "webpack --env.service=frontend",
+    "frontend:dev": "nodemon --config .nodemon/frontend.json --exec yarn run frontend:build",
+    "backend:build": "webpack --env.service=backend",
+    "backend:dev": "nodemon --config .nodemon/backend.json --exec yarn run backend:build",
+    "electron:build": "webpack --env.service=electron",
+    "electron:dev": "nodemon --config .nodemon/electron.json --exec yarn run electron:build"
   },
   "dependencies": {
-    "electron": "^1.7.9",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
     "rxjs": "^5.5.5"
   },
   "devDependencies": {
-    "@types/node": "^8.0.57",
-    "@types/react": "^16.0.29",
-    "@types/react-dom": "^16.0.3",
-    "another-rollup-watch": "^3.10.0",
-    "nodemon": "^1.12.1",
-    "postcss-cssnext": "^3.0.2",
-    "rollup": "^0.52.0",
-    "rollup-plugin-postcss-modules": "^1.0.8",
-    "rollup-plugin-typescript2": "^0.8.4",
-    "typescript": "^2.6.2"
+    "@types/electron": "^1.6.10",
+    "@types/node": "^8.5.1",
+    "electron": "^1.7.9",
+    "nodemon": "^1.13.3",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
   }
 }
