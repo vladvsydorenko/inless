@@ -10,19 +10,19 @@ let backendWindow: BrowserWindow;
 
 app.on('ready', () => {
 
-    frontendWindow = makeWindow({
-        path: FRONTEND_PAGE_URL,
-        showDevTools: true,
-        isMenuHidden: true,
-    });
+    // frontendWindow = makeWindow({
+    //     path: FRONTEND_PAGE_URL,
+    //     showDevTools: true,
+    //     isMenuHidden: true,
+    // });
+    // frontendWindow.on('closed', () => { frontendWindow = null; });
 
     backendWindow = makeWindow({
         path: BACKEND_PAGE_URL,
-        showDevTools: true,
         isHidden: false,
+        showDevTools: true,
+        isMenuHidden: true,
     });
-
-    frontendWindow.on('closed', () => { frontendWindow = null; });
     backendWindow.on('closed', () => { backendWindow = null; });
 
 });

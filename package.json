@@ -6,24 +6,28 @@
   "license": "MIT",
   "main": "dist/electron.js",
   "scripts": {
-    "app": "electron .",
-    "frontend:build": "webpack --env.service=frontend",
-    "frontend:dev": "nodemon --config .nodemon/frontend.json --exec yarn run frontend:build",
-    "backend:build": "webpack --env.service=backend",
-    "backend:dev": "nodemon --config .nodemon/backend.json --exec yarn run backend:build",
-    "electron:build": "webpack --env.service=electron",
-    "electron:dev": "nodemon --config .nodemon/electron.json --exec yarn run electron:build"
+    "services:dev": "webpack-dev-server --content-base dist/ --client-log-level error --no-info --env.services=frontend,backend",
+    "services:build": "webpack --watch --env.services=frontend,backend",
+    "electron:start": "electron .",
+    "electron:dev": "webpack --watch --env.services=electron"
   },
   "dependencies": {
+    "express": "^4.16.2",
     "rxjs": "^5.5.5"
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",
+    "@types/express": "^4.0.39",
     "@types/node": "^8.5.1",
+    "@types/webpack": "^3.8.1",
+    "@types/webpack-dev-middleware": "^1.12.0",
     "electron": "^1.7.9",
     "nodemon": "^1.13.3",
     "ts-loader": "^3.2.0",
     "typescript": "^2.6.2",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.1",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-hot-middleware": "^2.21.0"
   }
 }

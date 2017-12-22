@@ -4,6 +4,6 @@ export class A {
     b: any = new Subject();
 
     constructor() {
-        
+        console.log('Yeah it!');
     }
 }
