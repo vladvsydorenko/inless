@@ -10,6 +10,4 @@ export interface ILNode {
     name: string;
     input: ILNodeSocket[];
     output: ILNodeSocket[];
-
-    canConnect: (connection: ILConnection, anotherNode: ILNode) => boolean;
 }

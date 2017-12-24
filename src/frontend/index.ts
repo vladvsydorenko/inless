@@ -20,9 +20,5 @@ const testNode: ILNode = {
             name: 'fullname',
             type: 'string'
         }
-    ],
-    canConnect: (connection: ILConnection, anotherNode: ILNode) => {
-        const { inputSocket, outputSocket } = nodeUtil.findSocketsByConnection(connection, this, anotherNode);
-        return inputSocket.type === outputSocket.type;
-    }
+    ]
 };
