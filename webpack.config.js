@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const targetMap = {
     'frontend': 'web',
@@ -7,7 +8,10 @@ const targetMap = {
     'electron': 'electron-main',
 };
 
-const makeConfig = service => {
+const makeConfig = (service) => {
+    const plugins = [new webpack.optimize.ModuleConcatenationPlugin()];
+    if (service === 'frontend') plugins.push(new HtmlWebpackPlugin({ template: `./src/${service}/index.html` }));
+
     return {
         devtool: 'eval',
         target: targetMap[service],
@@ -24,9 +28,7 @@ const makeConfig = service => {
                 { test: /\.tsx?$/, loader: 'ts-loader' },
             ],
         },
-        plugins: [
-            new webpack.optimize.ModuleConcatenationPlugin(),
-        ],
+        plugins,
     };
 };
 

@@ -1,41 +1,30 @@
 import * as React from 'react';
-import { combineLatest } from 'rxjs/observable/combineLatest';
 import { render } from 'react-dom';
-import { ILNode } from '../shared/ILNode';
-import { ILConnection } from '../shared/ILConnection';
-import { LApplication } from '../shared/LApplication';
-import { UIScene } from './components/UIScene/UIScene';
+import { UIList } from 'inless-ui/src/components/UIList';
 
-const testNode: ILNode = {
-    id: 'test',
-    name: 'testNode',
-    input: [
+const props = {
+    nodes: [
         {
-            name: 'firstname',
-            type: 'string'
+            id: 1,
+            renderer: 'test'
         },
         {
-            name: 'secondname',
-            type: 'string'
+            id: 2,
+            renderer: 'test2'
         }
     ],
-    output: [
-        {
-            name: 'fullname',
-            type: 'string'
-        }
-    ]
+    renderers: {
+        test: (props: any) => {
+            return <div>Node made by Test</div>;
+        },
+        test2: (props: any) => {
+            return <div>And node renderer by Test2</div>;
+        },
+    },
+    rendererRef: (node: any, renderers: any) => node.renderer,
+    defaultRendererRef: () => 'test',
+    keyRef: (node: any): string => 'id',
+    className: 'bubi',
 };
 
-const app = new LApplication();
-app.addNode(testNode);
-
-const latest$ =  combineLatest(app.nodes$, app.connections$)
-    .subscribe(([ nodes, connections ]) => render(<UIScene nodes={ nodes } connections={ connections }/>, document.getElementById('app')));
-
-setTimeout(() => {
-    const node2 = Object.assign({}, testNode, { id: 'test2' });
-    const node3 = Object.assign({}, testNode, { id: 'test3' });
-    app.addNode(node2);
-    app.addNode(node3);
-}, 2000);
+render(<UIList {...props} />, document.getElementById('app'));
